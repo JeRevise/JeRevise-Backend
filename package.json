@@ -1,0 +1,32 @@
+{
+  "name": "jerevise-backend",
+  "version": "1.0.0",
+  "description": "![JeRevise - Plateforme de révision pour les collèges](https://raw.githubusercontent.com/JeRevise/JeRevise/refs/heads/main/svgviewer-png-output.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeRevise/JeRevise-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeRevise/JeRevise-Backend/issues"
+  },
+  "homepage": "https://github.com/JeRevise/JeRevise-Backend#readme",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "mysql2": "^3.14.4",
+    "sequelize": "^6.37.7",
+    "xml2js": "^0.6.2"
+  }
+}
