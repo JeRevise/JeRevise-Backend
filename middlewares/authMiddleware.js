@@ -10,6 +10,7 @@ exports.verifyProfToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    if (decoded.role !== "professeur") return res.status(403).json({ message: "Accès interdit" });
     req.professeur = decoded;
     next();
   } catch (err) {
