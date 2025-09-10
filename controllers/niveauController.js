@@ -3,6 +3,7 @@ const Classe = require("../models/Classe");
 const QCM = require("../models/QCM");
 const ProgrammeSpecial = require("../models/ProgrammeSpecial");
 const { Op } = require("sequelize");
+const sequelize = require("../config/db");
 
 // Récupérer les QCM selon le niveau de l'élève
 exports.getQCMParNiveau = async (req, res) => {
@@ -157,3 +158,13 @@ function genererAnalyseNiveau(stats) {
 
   return analyse;
 }
+
+function formaterChapitreAffichage(chapitre) {
+    if (chapitre.startsWith('BREVET_')) {
+      return chapitre.replace('BREVET_', 'Brevet - ');
+    } else if (chapitre.startsWith('HP_')) {
+      const parts = chapitre.split('_');
+      return `Hors Programme ${parts[1]} - ${parts.slice(2).join('_')}`;
+    }
+    return chapitre;
+  }

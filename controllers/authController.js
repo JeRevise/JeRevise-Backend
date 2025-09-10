@@ -4,6 +4,8 @@ const Classe = require("../models/Classe");
 const Matiere = require("../models/Matiere");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const sequelize = require("../config/db");
+const ProgrammeSpecial = require("../models/ProgrammeSpecial");
 require("dotenv").config();
 
 // Inscription professeur avec code d'activation

@@ -2,6 +2,8 @@ const Cours = require("../models/Cours");
 const ProgrammeSpecial = require("../models/ProgrammeSpecial");
 const multer = require("multer");
 const path = require("path");
+const { Op } = require("sequelize");
+const { extraireTexte } = require("../utils/ocr");
 
 // Configuration multer pour upload de fichiers
 const storage = multer.diskStorage({
@@ -150,4 +152,13 @@ exports.creerCoursSpecial = async (req, res) => {
     return chapitre;
   }
 
-module.exports = { upload };
+
+
+// CORRECTION : Exporter toutes les fonctions ET upload
+module.exports = {
+  upload,
+  creerCours: exports.creerCours,
+  getCoursProfesseur: exports.getCoursProfesseur,
+  creerCoursSpecial: exports.creerCoursSpecial,
+  getCoursParProgramme: exports.getCoursParProgramme
+};

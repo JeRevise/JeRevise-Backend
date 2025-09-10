@@ -23,13 +23,7 @@ exports.traiterCours = async (req, res) => {
 
     // Extraire le texte selon le type de fichier
     if (cours.fichier_url) {
-      const extension = path.extname(cours.fichier_url).toLowerCase();
-      
-      if (['.jpg', '.jpeg', '.png', '.gif', '.bmp'].includes(extension)) {
-        texteExtrait = await extraireTexteImage(cours.fichier_url);
-      } else if (extension === '.pdf') {
-        texteExtrait = await extraireTextePDF(cours.fichier_url);
-      }
+        texteExtrait = await extraireTexte(cours.fichier_url);
     }
 
     // Si pas de texte extrait ou texte trop court, utiliser le texte déjà en base

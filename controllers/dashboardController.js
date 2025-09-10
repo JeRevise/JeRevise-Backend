@@ -1,4 +1,5 @@
 const sequelize = require("../config/db");
+const { Op } = require("sequelize");
 const QCM = require("../models/QCM");
 const Cours = require("../models/Cours");
 const Score = require("../models/Score");
